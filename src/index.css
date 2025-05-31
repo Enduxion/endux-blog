@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("./assets/fonts/kumbh_sans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter.ttf") format("truetype");
+}
+
+@theme {
+  --color-primary: #141414;
+  --color-secondary: #262626;
+  --color-accent: #FFD11A;
+  --color-border: #666666;
+
+  --color-primary-text: #FFFFFF;
+  --color-secondary-text: #98989A;
+
+  --font-kumbh: "Kumbh Sans";
+  --font-inter: "Inter";
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-primary-text font-inter;
+  }
+}
+
+@layer utilities {
+  .button {
+    @apply px-5 py-2 bg-accent text-primary rounded-md font-medium;
+  }
+}
