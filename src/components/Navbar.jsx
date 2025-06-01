@@ -5,7 +5,9 @@ const Navbar = () => {
   
   const location = useLocation();
 
-  const getClassNameByPath = (path) => location.pathname === path ? "bg-primary border border-border/50 font-medium" : "text-secondary-text";
+  const getClassNameByPath = (path) => location.pathname === path ?
+    "bg-primary border border-border font-medium" : // currently selected
+    "text-secondary-text hover:text-subtle duration-100"; // not selected
 
   return (
     <>
@@ -17,7 +19,7 @@ const Navbar = () => {
             <span>Visit my personal website</span>
             <HiArrowUpRight className="text-accent translate-y-px" />
         </a>
-        <nav className="sticky top-0 bg-secondary px-8 py-3 flex flex-row justify-between items-center gap-4 border-b border-t border-border/30 w-full">
+        <nav className="sticky top-0 bg-secondary px-8 py-3 flex flex-row justify-between items-center gap-4 border-b border-t border-border w-full">
             <Link to="/" className="font-kumbh gap-1 flex text-lg">
               <span className="text-accent">Endux</span>
               <span>Blogs</span>
@@ -27,7 +29,7 @@ const Navbar = () => {
               <Link to="/blog" className={`px-4 py-2 rounded-md ${getClassNameByPath("/blog")}`}>Blog</Link>
               <Link to="/about" className={`px-4 py-2 rounded-md ${getClassNameByPath("/about")}`}>About</Link>
             </div>
-            <a href="mailto:pg.pawangurung@gmail.com" className="button">Contact Me</a>
+            <a href="mailto:pg.pawangurung@gmail.com" className="button duration-100">Contact Me</a>
         </nav>
     </>
   )
