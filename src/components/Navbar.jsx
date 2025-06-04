@@ -7,7 +7,7 @@ const Navbar = () => {
 
   const getClassNameByPath = (path) => location.pathname === path ?
     "bg-primary border border-border font-medium" : // currently selected
-    "text-secondary-text hover:text-subtle duration-100"; // not selected
+    "text-secondary-text border border-transparent hover:text-subtle"; // not selected
 
   return (
     <>
